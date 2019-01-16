@@ -217,7 +217,7 @@ var addItem = (list, item) => {
     list.push(item);
     return list;
 } 
-console.log(removeItem(myGroceryList));
+
 
 
 
@@ -233,7 +233,6 @@ var maker = () => {
   for(i = 1; i < 216; i++){
     array.push(i);
   }
-  console.log(array);
   return array;
 }
 
@@ -304,10 +303,16 @@ var longer = (arr1, arr2) => {
 //Code Here
 
 var both = (arr1, arr2) => {
-  newArray = [];
-  var filteredDups = arr1.filter((num) => arr2.includes(num))
-  newArray.push(filteredDups)
-} 
+  let newArray = [];
+  for(i = 0; i < arr1.length; i++){
+    for(j = 0; j < arr2.length; j++){
+      if(arr1[i] == arr2[j]){
+        newArray.push(arr2[j]);
+      }
+    }
+  }
+  return newArray;
+  }
 
 ////////// PROBLEM 12 //////////
 
@@ -347,7 +352,7 @@ var colt = {
 
 //Code Here
 devMountainEmployees.push(tyler, cahlan, ryan, colt);
-console.log(devMountainEmployees);
+
 
 
 /*
@@ -389,6 +394,20 @@ var user1 = {
     username: 'infiniteLoop'
 };
 // Do not edit the code above.
+
+var user2 = {
+  name: 'Sonny',
+  email: 'sonny@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniteLoop'
+};
+
+var user3 = {
+  name: 'Tim',
+  email: 'tim@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniteLoop'
+};
 
 //Code Here
 users.push(user1, user2, user3);
