@@ -123,6 +123,22 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 
+var divider = (arr) => {
+  var dividedArr = [];
+  var evens = [];
+  var odds = [];
+  for (let i = 0; i < arr.length; i++){
+    if((arr[i] % 2) === 0){
+      evens.push(arr[i]);
+    }
+    else if((arr[i] % 2) === 1){
+      odds.push(arr[i]);
+    }
+  }
+  dividedArr.push(evens);
+  dividedArr.push(odds);
+  return dividedArr;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -143,7 +159,15 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+var finder = (arr) => {
+  var randNum = getRandomArbitrary();
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === randNum){
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -172,6 +196,28 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+var removeItem = (list, item) => {
+  let falseyArr = [];
+  if(!list || !item){
+    return falseyArr;
+  }
+  for (let i = list.length - 1; i >= 0; i--){
+    if(list[i] === item){
+      list.splice(list[i], 1);
+    }
+  }
+  return list;
+} 
+
+var addItem = (list, item) => {
+  let falseyArr = [];
+  if(!list || !item){
+    return falseyArr;
+  }
+    list.push(item);
+    return list;
+} 
+console.log(removeItem(myGroceryList));
 
 
 
@@ -182,7 +228,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+var maker = () => {
+  var array = [];
+  for(i = 1; i < 216; i++){
+    array.push(i);
+  }
+  console.log(array);
+  return array;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -198,7 +251,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+var addTen = (arr) => {
+  var newArr = [];
+  
+  for( var i = 0; i < arr.length; i++ ) {
+    newArr.push(parseInt(arr[i]) + 10);
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -223,7 +283,14 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+var longer = (arr1, arr2) => {
+  if(arr1.length > arr2.length){
+    return arr1;
+  }
+  else {
+    return arr2;
+  }
+} 
 
 
 /*
@@ -236,7 +303,11 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+var both = (arr1, arr2) => {
+  newArray = [];
+  var filteredDups = arr1.filter((num) => arr2.includes(num))
+  newArray.push(filteredDups)
+} 
 
 ////////// PROBLEM 12 //////////
 
@@ -275,7 +346,8 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees);
 
 
 /*
@@ -284,7 +356,11 @@ var colt = {
 */
 
 //Code Here
-
+for(i = 0; i < devMountainEmployees.length; i++){
+  if(devMountainEmployees[i].name === "Cahlan"){
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -297,7 +373,7 @@ var colt = {
 
 //Code Here
 
-
+var users = [];
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
@@ -315,7 +391,7 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+users.push(user1, user2, user3);
 
 
 /*
@@ -330,7 +406,11 @@ var user1 = {
 
 //Code Here
 
-
+for(i = 0; i < users.length; i++){
+  if(users[i].email === 'tylermcginnis33@gmail.com'){
+    users.splice(i, 1);
+  }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
